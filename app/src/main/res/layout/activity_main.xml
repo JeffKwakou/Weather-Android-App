@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:backgroundTint="#273D59"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Choisis une position"
+        android:textColor="#FEFEFE"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <RadioButton
+            android:onClick="onRbPlaceClic"
+            android:id="@+id/rbPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Ville"
+            android:textColor="#FEFEFE"
+            android:textColorLink="#DF0D0D" />
+
+        <RadioButton
+            android:onClick="onRbZipCodeClic"
+            android:id="@+id/rbZipCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Code postal"
+            android:textColor="#FEFEFE" />
+
+        <RadioButton
+            android:onClick="onRbPositionClic"
+            android:id="@+id/rbPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Position"
+            android:textColor="#FEFEFE" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/llPlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etPlaceName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Entrez une ville"
+            android:inputType="textPersonName"
+            android:textColor="#FEFEFE"
+            android:textColorHint="#FEFEFE" />
+
+        <Button
+            android:id="@+id/btSearchPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#32425C"
+            android:onClick="onBtSearchPlaceClic"
+            android:text="Rechercher"
+            android:textColor="#FEFEFE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llZipCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etZipCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Entrez un code postal"
+            android:inputType="textPersonName"
+            android:textColor="#FEFEFE"
+            android:textColorHint="#FEFEFE" />
+
+        <Button
+            android:id="@+id/btSearchZip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#32425C"
+            android:onClick="onBtSearchZipClic"
+            android:text="Rechercher"
+            android:textColor="#FEFEFE" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etLat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Entrez une latitude"
+            android:inputType="textPersonName"
+            android:textColor="#FEFEFE"
+            android:textColorHint="#FEFEFE" />
+
+        <EditText
+            android:id="@+id/etLong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Entrez une longitude"
+            android:inputType="textPersonName"
+            android:textColor="#FEFEFE"
+            android:textColorHint="#FEFEFE" />
+
+        <Button
+            android:id="@+id/btSearchPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#32425C"
+            android:onClick="onBtSearchPositionClic"
+            android:text="Rechercher"
+            android:textColor="#FEFEFE" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvZip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</LinearLayout>
